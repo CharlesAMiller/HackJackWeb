@@ -17,25 +17,29 @@ var service = server.listen(port, function(request, response)
     if(request.method == 'POST')
     {
         // Take post data
-        var receiptNumber = String(request.post);
+        var receiptNumber = String(request.post["receipt"]);
 
-        // Has to be a 14 character long digit. This shouldn't be a problem,
-        // if it's being sent from the app.
-        if(receiptNumber.match(/^[0-9]{14}$/))
+        if(receiptNumber != null)
         {
-            console.log("Valid receipt: " + receiptNumber);
-            // Open page
-            redeem_receipt(receiptNumber, function(validCode)
+            // Has to be a 14 character long digit. This shouldn't be a problem,
+            // if it's being sent from the app.
+            if(receiptNumber.match(/^[0-9]{14}$/))
             {
-                console.log("Valid Code!: " + validCode);
-                response.write(validCode);
-                response.close();
-            });
+                console.log("Valid receipt: " + receiptNumber);
+                // Open page
+                redeem_receipt(receiptNumber, function(validCode)
+                {
+                    console.log("Valid Code!: " + validCode);
+                    response.write(validCode);
+                    response.close();
+                });
+            }
+            else
+            {
+                response.write("Sorry, that's not a valid receipt")
+            }
         }
-        else
-        {
-            response.write("Sorry, that's not a valid receipt")
-        }
+        
     }
     else
     {
