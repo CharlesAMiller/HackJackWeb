@@ -44,7 +44,7 @@ var service = server.listen(port, function(request, response)
     }
     else
     {
-        response.write("Thanks for visiting the HackJack site. For more info visit: charliemiller.xyz/hackjack");
+        response.write("Thanks for visiting the HackJack site. More info coming soon!");
     }
 
     // page.close();
@@ -195,8 +195,6 @@ function redeem_receipt(receiptNumber, callback)
                 // set the value property of the object (which is what we do elsewhere in the form).
                 // So instead we dispatch a keypress event for each character in the redeem code.
                 case "https://www.inmoment.com/websurvey/2/execute#/2":
-
-                    console.log("Reached page 2 evaluation");
 
                     for(var i = 0; i < receiptNumber.length; i++)
                     {
