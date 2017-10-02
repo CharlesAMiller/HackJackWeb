@@ -1,13 +1,12 @@
 Hack Jack Web
 ===================
 
-This project is a web server that interprets Jack In The Box receipt codes from POST requests, performs web scraping on JackListens.com, and returns a valid code for redemption. 
+This project is a web server that interprets Jack In The Box receipt codes from POST requests, 
+performs web scraping on JackListens.com, and returns a valid code for redemption. 
 
-Much thanks to [Ben Foxall](https://github.com/benfoxall/phantomjs-webserver-example) for his PhantomJS server example code.
-And another big thanks to those supporting the [PhantomJS heroku buildpack](https://github.com/stomita/heroku-buildpack-phantomjs).
+You can visit the live site [here](https://sheltered-thicket-46039.herokuapp.com/). 
 
 ## Running 
-
 
 ```bash
 phantomjs hackjacksite.js
@@ -24,6 +23,10 @@ heroku create --stack cedar --buildpack http://github.com/stomita/heroku-buildpa
 # Deploy the app to the heroku site.
 git push heroku master
 ```
+
+## Credits
+Much thanks to [Ben Foxall](https://github.com/benfoxall/phantomjs-webserver-example) for his PhantomJS server example code.
+And another big thanks to those supporting the [PhantomJS heroku buildpack](https://github.com/stomita/heroku-buildpack-phantomjs).
 
 ## About
 *Contact - charliea.miller@gmail.com
